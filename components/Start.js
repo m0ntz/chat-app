@@ -3,7 +3,6 @@ import {
   View,
   Text,
   TextInput,
-  Button,
   StyleSheet,
   ImageBackground,
   Image,
@@ -90,7 +89,11 @@ export default class Start extends React.Component {
               </View>
               <TouchableOpacity
                 style={styles.button}
-                title="Start Chatting"
+                accessible={true}
+                accessibilityLabel="Enter Chat"
+                accessibilityHint="Lets you enter to the chat and start a conversation"
+                accessibilityRole="button"
+                title="Enter Chat"
                 onPress={() =>
                   this.props.navigation.navigate("Chat", {
                     name: this.state.name,
@@ -98,7 +101,7 @@ export default class Start extends React.Component {
                   })
                 }
               >
-                <Text style={styles.buttonText}>Start Chatting</Text>
+                <Text style={styles.buttonText}>Enter Chat</Text>
               </TouchableOpacity>
             </View>
           </View>
@@ -126,7 +129,7 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     paddingTop: "10%",
     paddingBottom: 0,
-    marginBottom: "56%",
+    marginBottom: "30%",
   },
   startWrapper: {
     flex: 2,
