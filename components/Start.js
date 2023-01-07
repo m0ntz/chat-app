@@ -30,7 +30,11 @@ export default class Start extends React.Component {
           style={styles.image}
         >
           <View
-            style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+            style={{
+              flex: 1,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
           >
             <Text style={styles.title}>Chat App</Text>
             <View style={styles.startWrapper}>
@@ -120,7 +124,7 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     justifyContent: "space-between",
     resizeMode: "cover",
-    paddingVertical: "6%",
+    paddingVertical: "16%",
   },
   title: {
     flex: 1,
@@ -128,17 +132,18 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     color: "#FFFFFF",
     paddingTop: "10%",
-    paddingBottom: 0,
-    marginBottom: "30%",
+    paddingBottom: "2%",
+    marginBottom: 0,
   },
   startWrapper: {
-    flex: 2,
+    flex: 3,
     backgroundColor: "white",
-    height: "20%",
+    height: "44%",
     width: "88%",
     alignItems: "center",
     justifyContent: "space-around",
     paddingVertical: "6%",
+    marginBottom: "51%",
   },
 
   inputWrapper: {
