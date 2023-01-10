@@ -11,11 +11,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import NetInfo from "@react-native-community/netinfo";
 import CustomActions from "./CustomActions";
 import MapView from "react-native-maps";
-// import firebase from "firebase/compat/app";
-// import "firebase/compat/auth";
-// import "firebase/compat/firestore";
-import firebase from "firebase";
 
+import firebase from "firebase";
 require("firebase/firestore");
 
 export default class Chat extends React.Component {
