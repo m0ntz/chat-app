@@ -5,7 +5,8 @@
 The Chat app is built for mobile devices using React Native, it operates on both OS (Android and iOS). The app provides the user with a chat interface and options to share images and their location.
 
 ### Demo
-![chat-app final demo](https://user-images.githubusercontent.com/109100764/211570159-646d712f-f60c-4f20-a04f-6fbe759e1cb3.gif)
+![chat-app final demo resized](https://user-images.githubusercontent.com/109100764/211570776-85dc9327-6404-448e-9450-4cf5b55d9109.gif)
+
 
 
 ## Key Features
