@@ -4,20 +4,21 @@ import * as Location from "expo-location";
 import * as ImagePicker from "expo-image-picker";
 import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import { connectActionSheet } from "@expo/react-native-action-sheet";
-import firebase from "firebase/compat/app";
-import "firebase/compat/auth";
-import "firebase/storage";
-import "firebase/compat/firestore";
-import {
-  getStorage,
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-} from "firebase/storage";
+// import firebase from "firebase/compat/app";
+// import "firebase/compat/auth";
+// import "firebase/storage";
+// import "firebase/compat/firestore";
+import firebase from "firebase";
+import "firebase/firestore";
+// import {
+//   getStorage,
+//   ref,
+//   uploadBytesResumable,
+//   getDownloadURL,
+// } from "firebase/storage";
 
 export default class CustomActions extends React.Component {
   // Function to select a photo from library
-
   imagePicker = async () => {
     const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
     try {
@@ -88,28 +89,24 @@ export default class CustomActions extends React.Component {
       };
       xhr.responseType = "blob";
       xhr.open("GET", uri, true);
-      xhr.send(null);
+      xhr.send();
     });
 
     const imageNameBefore = uri.split("/");
     const imageName = imageNameBefore[imageNameBefore.length - 1];
 
     // const storage = getStorage();
+    // const reff = ref(storage, `images/${imageName}`);
 
-    // const storageRef = ref(storage);
-    // const ref = ref(storageRef, `images/${imageName}`);
+    const ref = firebase.storage().ref().child(`images/${imageName}`);
 
-    const reff = ref(getStorage(), `images/${imageName}`);
-
-    //const ref = firebase.storage().ref().child(`images/${imageName}`);
-
-    const snapshot = uploadBytesResumable(reff, blob);
-    // const snapshot = await ref.put(blob);
+    // const snapshot = uploadBytesResumable(reff, blob);
+    const snapshot = await ref.put(blob);
 
     blob.close();
 
-    return await getDownloadURL(snapshot.snapshot.ref);
-    //  return await snapshot.ref.getDownloadURL();
+    // return await getDownloadURL(snapshot.snapshot.ref);
+    return await snapshot.ref.getDownloadURL();
   };
 
   /**
