@@ -6,10 +6,11 @@ The Chat app is built for mobile devices using React Native, it operates on both
 
 ## Tech Stack
 
+- Javascript
 - React Native
 - Expo
-- Firestore Database
-- Firebase
+- Cloud Firestore Database
+- Firebase Storage
 - Gifted Chat
 
 ## Key Features
@@ -20,6 +21,16 @@ The Chat app is built for mobile devices using React Native, it operates on both
 - The chat provides users with two additional communication features: sending images
   and location data.
 - Data gets stored online and offline.
+
+## Getting Started
+
+- Clone the repository: git clone https://github.com/m0ntz/chat-app.git
+- Install Expo CLI, run npm install -g expo-cli
+- Install all project dependencies: npm install
+- Create an Expo account at https://expo.dev/ and login at the terminal with expo login
+- Install Expo Go on your mobile phone
+- Start the project with npx expo start
+- In case of problem while conneting to your project on Expo Go, run npx expo start --tunnel
 
 ## User Stories
 
